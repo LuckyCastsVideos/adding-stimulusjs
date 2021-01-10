@@ -2,7 +2,10 @@ class SignUps::NewPage < AuthLayout
   needs operation : SignUpUser
 
   def content
-    h1 "Sign Up"
+    div data_controller: "hello" do
+      h1 "Sign Up"
+      button "Hello", data_action: "click->hello#greet"
+    end
     render_sign_up_form(@operation)
   end
 
